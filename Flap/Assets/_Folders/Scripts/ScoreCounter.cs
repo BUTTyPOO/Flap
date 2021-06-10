@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
@@ -14,13 +15,13 @@ public class ScoreCounter : MonoBehaviour
     {
         if(col.CompareTag("ScoreTrigger"))
         {
-            score++;
-            //print(score);
+            TextMesh t = GameObject.Find("ScoreText").GetComponent<TextMesh>();
+            score = int.Parse(t.text);
+            t.text = (score + 1).ToString();
         }
     }
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

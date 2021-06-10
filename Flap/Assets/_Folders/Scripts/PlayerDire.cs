@@ -13,7 +13,10 @@ public class PlayerDire : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if(col.CompareTag("Pipe"))
-            print("Player died");
+        {
+            TextMesh t = GameObject.Find("ScoreText").GetComponent<TextMesh>();
+            t.text = "0";
+        }
     }
     // Update is called once per frame
     void Update()
