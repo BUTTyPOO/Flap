@@ -2,26 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class ScoreCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] TextMeshProUGUI txt;
+
     void Start()
     {
-        
+        txt ??= GameObject.Find("ScoreTxt").GetComponent<TextMeshProUGUI>();
     }
+
     int score = 0;
     void OnTriggerEnter(Collider col)
     {
         if(col.CompareTag("ScoreTrigger"))
         {
-            TextMesh t = GameObject.Find("ScoreText").GetComponent<TextMesh>();
-            score = int.Parse(t.text);
-            t.text = (score + 1).ToString();
+            ++score;
+            UpdateTxt();
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    void UpdateTxt()
     {
+        txt.text = (score).ToString();
+        txt.transform.DOComplete(false);
+        txt.transform.DOPunchScale(txt.transform.localScale * 1.3f, 0.4f, 10, 0);
     }
 }
