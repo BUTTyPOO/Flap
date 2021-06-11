@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cace0dfcc314dce4d8dfa5996e4aa480, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -154,7 +154,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 33.48}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.52, z: 0}
 --- !u!23 &56806994
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDire : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerDire : MonoBehaviour
         {
             TextMesh t = GameObject.Find("ScoreText").GetComponent<TextMesh>();
             t.text = "0";
+            SceneManager.LoadScene(0);
         }
     }
     // Update is called once per frame
